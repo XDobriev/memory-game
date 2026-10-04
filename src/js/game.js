@@ -2,7 +2,7 @@ import { CARD_IMAGES, PAIRS_COUNT } from './data/cards.js';
 import { shuffle } from './utils/shuffle.js';
 
 // How long a mismatched pair stays face up (task allows 700–1500 ms).
-export const MISMATCH_DELAY = 1000;
+const MISMATCH_DELAY = 1000;
 
 function createDeck() {
   const deck = CARD_IMAGES.flatMap((image) => [image, image]);
