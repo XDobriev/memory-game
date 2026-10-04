@@ -185,6 +185,7 @@ p {
   background: none;
   cursor: pointer;
   perspective: 800px;
+  touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -224,12 +225,14 @@ p {
   transition: filter 0.2s;
 }
 
-.card:not(.card--open):hover .card__face--back {
-  filter: brightness(1.15);
-}
+@media (hover: hover) {
+  .card:not(.card--open):hover .card__face--back {
+    filter: brightness(1.15);
+  }
 
-.board--locked .card:not(.card--open):hover .card__face--back {
-  filter: none;
+  .board--locked .card:not(.card--open):hover .card__face--back {
+    filter: none;
+  }
 }
 
 .card__face--front {
