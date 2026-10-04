@@ -326,6 +326,41 @@ p {
   color: var(--color-accent);
 }
 
+.leaderboard {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text);
+}
+
+.leaderboard th,
+.leaderboard td {
+  padding: 9px 8px;
+  text-align: center;
+}
+
+.leaderboard th {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.leaderboard tbody tr:nth-child(even) {
+  background-color: rgb(255 255 255 / 0.03);
+}
+
+.leaderboard tbody tr:first-child td {
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.leaderboard__empty {
+  padding: 16px 0;
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;

@@ -4,7 +4,9 @@ import { createStats } from './components/stats.js';
 import { createBoard } from './components/board.js';
 import { createModal } from './components/modal.js';
 import { showWinModal } from './components/win-modal.js';
+import { showLeaderboardModal } from './components/leaderboard-modal.js';
 import { createGame } from './game.js';
+import { saveResult } from './leaderboard.js';
 import { PAIRS_COUNT } from './data/cards.js';
 
 const app = createElement('div', { className: 'app' });
@@ -20,13 +22,14 @@ game = createGame({
   board,
   stats,
   onWin: ({ moves }) => {
+    saveResult(moves);
     showWinModal(modal, { moves, onNewGame: game.start });
   },
 });
 
 const header = createHeader({
   onNewGame: () => game.start(),
-  onShowLeaderboard: () => {},
+  onShowLeaderboard: () => showLeaderboardModal(modal),
 });
 
 const main = createElement('main', {
