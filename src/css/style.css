@@ -39,8 +39,7 @@ body {
   color: var(--color-text);
   background:
     radial-gradient(circle at 15% -10%, rgb(88 101 242 / 0.22), transparent 45%),
-    radial-gradient(circle at 100% 110%, rgb(255 138 61 / 0.14), transparent 40%),
-    var(--color-bg);
+    radial-gradient(circle at 100% 110%, rgb(255 138 61 / 0.14), transparent 40%), var(--color-bg);
   background-attachment: fixed;
 }
 

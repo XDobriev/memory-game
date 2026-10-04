@@ -21,7 +21,10 @@ export function createHeader({ onNewGame, onShowLeaderboard }) {
   return createElement('header', {
     className: 'header',
     children: [
-      createElement('div', { className: ['header__inner', 'container'], children: [title, controls] }),
+      createElement('div', {
+        className: ['header__inner', 'container'],
+        children: [title, controls],
+      }),
     ],
   });
 }
