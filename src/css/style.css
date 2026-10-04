@@ -244,7 +244,12 @@ p {
   user-select: none;
 }
 
-.card--matched .card__face--front {
+/* drawn above the image, otherwise the picture hides the frame */
+.card--matched .card__face--front::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
   box-shadow: inset 0 0 0 3px var(--color-success);
 }
 
