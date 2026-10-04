@@ -12,13 +12,13 @@ import { PAIRS_COUNT } from './data/cards.js';
 const app = createElement('div', { className: 'app' });
 const modal = createModal({ root: app });
 const stats = createStats(PAIRS_COUNT);
-let game = null;
 
+// The handler runs only on a real click, when `game` is already defined.
 const board = createBoard({
   onCardClick: (index) => game.handleCardClick(index),
 });
 
-game = createGame({
+const game = createGame({
   board,
   stats,
   onWin: ({ moves }) => {
@@ -28,7 +28,7 @@ game = createGame({
 });
 
 const header = createHeader({
-  onNewGame: () => game.start(),
+  onNewGame: game.start,
   onShowLeaderboard: () => showLeaderboardModal(modal),
 });
 
